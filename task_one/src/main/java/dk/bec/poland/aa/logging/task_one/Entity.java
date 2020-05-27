@@ -11,7 +11,6 @@ import java.net.URL;
 import java.util.Random;
 
 public final class Entity {
-  //TODO: add Logger here
   private static final Logger log = LogManager.getLogger(Entity.class);
   private final int id;
   private final String category;
@@ -21,7 +20,6 @@ public final class Entity {
     this.category = category;
   }
 
-  // TODO: create toString() implementation here
   @Override
   public String toString() {
     return "Entity{" +
@@ -30,7 +28,6 @@ public final class Entity {
             '}';
   }
 
-  // TODO: add logging to this method
   public String randString() throws IOException {
     String url = "https://random-word-api.herokuapp.com/";
 
@@ -39,7 +36,7 @@ public final class Entity {
     urlConnection.setRequestMethod("GET");
     urlConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
     String response;
-    log.trace("First-method");
+    log.trace("First-method ");
     if (urlConnection.getResponseCode() == 200) {
       try (BufferedReader reader =
           new BufferedReader(new InputStreamReader(urlConnection.getInputStream()))) {
@@ -54,9 +51,8 @@ public final class Entity {
     return serialized.split(",")[randomIndex];
   }
 
-  //TODO:  add logging to this method
   private static String serialize(String rawString) {
-    log.trace("Second-method");
+    log.info("Second-method " + rawString);
     return rawString.replace("[", "").replace("]", "")
             .replace("\"", "");
 
