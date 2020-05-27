@@ -28,7 +28,6 @@ public final class Entity {
             '}';
   }
 
-  // TODO: add logging to this method
   public String randString() throws IOException {
     String url = "https://random-word-api.herokuapp.com/";
 
@@ -54,7 +53,6 @@ public final class Entity {
     return serialized.split(",")[randomIndex];
   }
 
-  //TODO:  add logging to this method
   private static String serialize(String rawString) {
     log.info("Serializing "+rawString);
     return rawString.replace("[", "").replace("]", "").replace("\"", "");

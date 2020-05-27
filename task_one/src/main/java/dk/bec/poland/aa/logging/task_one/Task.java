@@ -18,11 +18,9 @@ public class Task {
       } else if (randomString.startsWith("b")) {
         log.debug("Random string: "+randomString);
       } else if (randomString.startsWith("c")) {
-        //TODO: INFO randomString and entity instance
         log.info("Random String: "+randomString);
         log.info(entity);
       } else {
-        //TODO:  WARN "couldn't match any condition"
         log.warn("Couldn't match any condition");
       }
     }
