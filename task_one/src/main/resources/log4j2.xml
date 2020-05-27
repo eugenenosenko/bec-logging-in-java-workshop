@@ -1,9 +1,16 @@
 <Configuration>
     <Appenders>
         <!--        add appenders-->
+        <Console name="ConsoleTask1" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+        </Console>
     </Appenders>
     <Loggers>
+        <Root level="debug">
+                <AppenderRef ref="ConsoleTask1"/>
         <!--         add loggers-->
+        </Root>
     </Loggers>
 </Configuration>
 
