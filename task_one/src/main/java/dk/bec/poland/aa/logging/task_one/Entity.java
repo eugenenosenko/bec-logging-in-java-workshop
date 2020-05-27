@@ -1,5 +1,8 @@
 package dk.bec.poland.aa.logging.task_one;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,6 +12,7 @@ import java.util.Random;
 
 public final class Entity {
   //TODO: add Logger here
+  private static final Logger log = LogManager.getLogger(Entity.class);
   private final int id;
   private final String category;
 
@@ -18,6 +22,15 @@ public final class Entity {
   }
 
   // TODO: create toString() implementation here
+
+  @Override
+  public String toString() {
+    return "Entity{" +
+            "id=" + id +
+            ", category='" + category + '\'' +
+            '}';
+  }
+
 
   // TODO: add logging to this method
   public String randString() throws IOException {
@@ -35,6 +48,7 @@ public final class Entity {
         response = reader.readLine();
       }
     } else {
+      log.fatal("Connection to URL failed. Response code: "+ urlConnection.getResponseCode());
       throw new RuntimeException("Failed to connect");
     }
 
@@ -45,6 +59,8 @@ public final class Entity {
 
   //TODO:  add logging to this method
   private static String serialize(String rawString) {
+    log.debug("We try to serialize this raw String: "+ rawString);
     return rawString.replace("[", "").replace("]", "").replace("\"", "");
+
   }
 }
