@@ -39,14 +39,15 @@ public final class Entity {
     urlConnection.setRequestMethod("GET");
     urlConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
     String response;
-    log.info("Try to connect to url: " + url);
+    log.info("Connection opened to url: " + url + "/word?number=" + id);
 
     if (urlConnection.getResponseCode() == 200) {
       log.info("The response code is 200");
       try (BufferedReader reader =
           new BufferedReader(new InputStreamReader(urlConnection.getInputStream()))) {
         response = reader.readLine();
-        log.info("Read the line form the console" + response);
+        log.info("Correctly read the response from the url connection");
+        log.debug("Response from the server " + url + "was" + response);
       }
     } else {
       log.error("Connection is failed");
@@ -60,7 +61,7 @@ public final class Entity {
   }
 
   private static String serialize(String rawString) {
-    log.trace("Serializing two strings: " + rawString);
+    log.trace("Serializing to strings: " + rawString);
     return rawString.replace("[", "").replace("]", "").replace("\"", "");
   }
 }
