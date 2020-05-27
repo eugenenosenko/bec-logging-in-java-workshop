@@ -5,12 +5,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 class PersonalLoggerClass {
-  // TODO: create a logger here
+  // create a logger here
   private static final Logger log = LogManager.getLogger(PersonalLoggerClass.class);
 
 
     void debug() {
-    // TODO: uncomment this line after you created logger
+    // uncomment this line after you created logger
     log.trace("This message should appear in the console 2");
   }
 }

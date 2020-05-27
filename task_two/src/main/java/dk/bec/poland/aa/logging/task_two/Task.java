@@ -4,12 +4,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Task {
-  // TODO: create a logger here
+  // create a logger here
   private static final Logger log = LogManager.getLogger(Task.class);
 
 
     public static void main(String[] args) {
-    // TODO: uncomment this line after you created logger
+    //  uncomment this line after you created logger
     log.info("This message should appear in the console 1");
     log.debug("This message should not be visible in the console");
 
