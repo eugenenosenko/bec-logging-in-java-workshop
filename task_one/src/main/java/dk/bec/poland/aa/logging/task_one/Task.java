@@ -16,13 +16,13 @@ public class Task {
       String randomString = entity.randString();
       if (randomString.startsWith("a")) {
         //TODO:  TRACE entity instance
-        log.trace("Random string that starts with A");
+        log.trace("Random string that starts with A" + entity);
       } else if (randomString.startsWith("b")) {
         //TODO:  DEBUG randomString
-        log.debug("Random string that starts with B");
+        log.debug("Random string that starts with B" + randomString);
       } else if (randomString.startsWith("c")) {
         //TODO: INFO randomString and entity instance
-        log.info("Random string that starts with C");
+        log.info("Random string that starts with C" + randomString + entity);
       } else {
         //TODO:  WARN "couldn't match any condition"
         log.warn("couldn't match any condition");
