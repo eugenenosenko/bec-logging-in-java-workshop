@@ -22,7 +22,7 @@ public final class Entity {
 
   @Override
   public String toString() {
-    return "Entity{" +
+    return "Entity {" +
             "id=" + id +
             ", category='" + category + '\'' +
             '}';
@@ -36,12 +36,13 @@ public final class Entity {
     urlConnection.setRequestMethod("GET");
     urlConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
     String response;
-    log.info("Connection opened");
+    log.info("Connection opened to "+url + "/word?number=" + id);
     if (urlConnection.getResponseCode() == 200) {
       try (BufferedReader reader =
           new BufferedReader(new InputStreamReader(urlConnection.getInputStream()))) {
         response = reader.readLine();
         log.info("Communication successful");
+        log.debug(response);
       }
     } else {
       log.error("Connection failed to "+url+"/word?number=" + id);
