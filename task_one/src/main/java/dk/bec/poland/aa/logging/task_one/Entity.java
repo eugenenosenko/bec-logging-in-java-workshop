@@ -39,7 +39,7 @@ public final class Entity {
     urlConnection.setRequestMethod("GET");
     urlConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
     String response;
-    log.trace("First method");
+    log.trace("First-method");
     if (urlConnection.getResponseCode() == 200) {
       try (BufferedReader reader =
           new BufferedReader(new InputStreamReader(urlConnection.getInputStream()))) {
@@ -56,7 +56,7 @@ public final class Entity {
 
   //TODO:  add logging to this method
   private static String serialize(String rawString) {
-    log.trace("Second method");
+    log.trace("Second-method");
     return rawString.replace("[", "").replace("]", "")
             .replace("\"", "");
 
