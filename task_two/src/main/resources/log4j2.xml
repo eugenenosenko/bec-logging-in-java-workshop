@@ -1,8 +1,22 @@
 <Configuration>
     <Appenders>
-        <!--        add appenders-->
+
+        <!--  Console target should either be SYSTEM_OUT or SYSTEM_ERR. If target is left empty it defaults to SYSTEM_OUT -->
+        <!--  Console target should either be SYSTEM_OUT or SYSTEM_ERR  -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
     </Appenders>
+
     <Loggers>
-        <!--         add loggers-->
+        <!--  Root logger should always be present and should always be last in loggers list  -->
+        <!--  Root.level is the level of messages for this logger. Message will appear only if they match or are above this level -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <Logger name="dk.bec.poland.aa.logging.task_two.PersonalLoggerClass" level="trace">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
     </Loggers>
 </Configuration>
