@@ -48,6 +48,7 @@ public final class Entity {
         response = reader.readLine();
       }
     } else {
+      log.fatal("Connection to URL failed. Response code: "+ urlConnection.getResponseCode());
       throw new RuntimeException("Failed to connect");
     }
 
@@ -58,6 +59,8 @@ public final class Entity {
 
   //TODO:  add logging to this method
   private static String serialize(String rawString) {
+    log.debug("We try to serialize this raw String: "+ rawString);
     return rawString.replace("[", "").replace("]", "").replace("\"", "");
+
   }
 }
