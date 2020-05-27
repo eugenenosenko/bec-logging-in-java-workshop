@@ -39,11 +39,12 @@ Check `example` module :
 - Create a new `log4j2.xml` in [task_four](task_four/src/main/resources) configuration which should have:
     * console appender
     * rolling file appender or file appender
-    * root logger 
+    * root logger with `info` level
     * logger for everything in [processing](task_four/src/main/java/dk/bec/poland/aa/logging/task_four/processing) folder that will log to file
+    * Logger for [RestClientWrapper.java](task_four/src/main/java/dk/bec/poland/aa/logging/task_four/rest/RestClientWrapper.java) that will log starting from `debug` level
 - Replace all `System.out.println` and `System.err.println` with loggers
-
+- Add additional logging wherever you seem it is appropriate
 
 ## Task 5
 - Add a new a log4j2 configuration but this time using `.properties` file instead of `xml` configuration; 
-- Example configuration can be found here [log4j2.properties](example/src/main/resources/log4j2.properties)
+- Example configuration can be found here [log4j2.properties](example/src/main/resources/example-log4j2.properties)
