@@ -1,8 +1,17 @@
 <Configuration>
     <Appenders>
         <!--        add appenders-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
     </Appenders>
     <Loggers>
         <!--         add loggers-->
+        <Logger name = "PersonalLoggerClass" level = "trace">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
     </Loggers>
 </Configuration>
