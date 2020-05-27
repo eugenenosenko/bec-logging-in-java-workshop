@@ -1,4 +1,4 @@
-# Java logging workshop 
+# BEC - Automation Academy [Logging in Java]
 
 ## Checkout out the project
 1. Clone repository from [GitHub](https://github.com/eugenenosenko/bec-logging-in-java-workshop.git)
