@@ -1,0 +1,27 @@
+<!-- Configuration status defines the logging level for Log4j events -->
+<Configuration status="warn">
+    <Appenders>
+
+        <!--  Console target should either be SYSTEM_OUT or SYSTEM_ERR. If target is left empty it defaults to SYSTEM_OUT -->
+        <!--  Console target should either be SYSTEM_OUT or SYSTEM_ERR  -->
+        <Console name="Console" target="SYSTEM_OUT">
+
+            <!--  PatternLayout.pattern defines the way log message will appear in the logger.
+            Documentation for it is here https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html -->
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <!--  This pattern will show messages in following manner:
+            <HOUR_MINUTES_SECONDS_MILLISECONDS> [THREAD_NAME] <LOG_LEVEL> com.full.package.name.ClassName - <LOG_MESSAGE>\n
+            -->
+
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!--  Root logger should always be present and should always be last in loggers list  -->
+        <!--  Root.level is the level of messages for this logger. Message will appear only if they match or are above this level -->
+        <Root level="trace">
+            <!--  AppenderRef.ref is required and has to contain the name of the appender defined in <Appenders /> -->
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

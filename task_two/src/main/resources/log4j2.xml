@@ -1,0 +1,8 @@
+<Configuration>
+    <Appenders>
+        <!--        add appenders-->
+    </Appenders>
+    <Loggers>
+        <!--         add loggers-->
+    </Loggers>
+</Configuration>
